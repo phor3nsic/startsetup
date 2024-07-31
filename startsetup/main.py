@@ -1,6 +1,13 @@
 import os
 
-def create_project_structure(project_name, requirements_file=None):
+def create_project_structure(
+        project_name, 
+        requirements_file=None, 
+        author_name=None, 
+        author_email=None, 
+        github_user=None
+        ):
+    
     # Meke the folders
     os.makedirs(f"{project_name}/{project_name}", exist_ok=True)
     
@@ -21,12 +28,12 @@ setup(
             '{project_name}={project_name}.main:main',
         ],
     }},
-    author='Your Name',
-    author_email='your_email@exemple.com',
+    author='{author_name}',
+    author_email='{author_email}',
     description='Description of {project_name}.',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
-    url='https://github.com/your_user/{project_name}',
+    url='https://github.com/{github_user}/{project_name}',
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
@@ -79,8 +86,21 @@ build/*
 def main():
     project_name = input("Insert the name of project: ")
     requirements_file = input("If have a requirements.txt, insert the path of file  (leave blank if there is none): ")
+    github_user = input("Insert the Github user: ")
+    author_name = input("Insert name of author: ")
+    author_email = input("Insert email of author: ")
+
     requirements_file = requirements_file if requirements_file else None
-    create_project_structure(project_name, requirements_file)
+    github_user = github_user if github_user else "your_user"
+    author_name = author_name if author_name else "Your Name"
+    author_email = author_email if author_email else "your_email@exemple.com"
+    create_project_structure(
+        project_name, 
+        requirements_file, 
+        author_name, 
+        author_email,
+        github_user
+        )
 
 if __name__ == '__main__':
     main()
