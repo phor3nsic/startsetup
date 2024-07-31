@@ -50,7 +50,7 @@ setup(
     else:
         open(f"{project_name}/requirements.txt", 'w').close()
 
-    # MAke __init__.py
+    # Make __init__.py
     open(f"{project_name}/{project_name}/__init__.py", 'w').close()
     
     # Make main.py
@@ -62,6 +62,17 @@ if __name__ == '__main__':
 """
     with open(f"{project_name}/{project_name}/main.py", 'w') as f:
         f.write(main_content)
+    
+    # Make .gitignore
+    gitignore_content = f"""*venv*
+venv/*
+build/*
+*build*
+*{project_name}.egg-info*
+{project_name}.egg-info/*
+"""
+    with open(f"{project_name}/.gitignore", 'w') as f:
+        f.write(gitignore_content)
 
     print(f"Project {project_name} generated with sucess!")
 
