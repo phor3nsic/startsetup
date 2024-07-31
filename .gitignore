@@ -1,0 +1,6 @@
+venv/*
+*venv*
+*build*
+build/*
+*startsetup.egg-info*
+startsetup.egg-info/*
