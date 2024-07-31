@@ -13,7 +13,20 @@ def create_project_structure(
     
     # Make README.md
     with open(f"{project_name}/README.md", 'w') as f:
-        f.write(f"# {project_name}\n\nDescription of project {project_name}.")
+        install = f"""\n\n### Install
+
+- via pipx:
+
+```sh
+pipx install git+https://github.com/{github_user}/{project_name}
+```
+- via pip:
+
+```sh
+pip install git+https://github.com/{github_user}/{project_name}
+```
+"""
+        f.write(f"# {project_name}\n\nDescription of project{project_name}.{install}")
     
     # Make setup.py
     setup_content = f"""from setuptools import setup, find_packages
