@@ -21,10 +21,10 @@ pip install git+https://github.com/phor3nsic/startsetup
 ### Results
 
 ```
-|-- README.md
-|-- setup.py
-|-- .gitignore
-|-- project_name/
-    |-- __inity__.py
-    |-- main.py
+|__ README.md
+|__ setup.py
+|__ .gitignore
+|__ project_name/
+    |__ __inity__.py
+    |__ main.py
 ```
