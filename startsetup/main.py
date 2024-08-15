@@ -1,5 +1,7 @@
 import os
 
+def prGreen(msg): print("\033[92m {}\033[00m" .format(msg))
+
 def create_project_structure(
         project_name, 
         requirements_file=None, 
@@ -97,11 +99,11 @@ build/*
     print(f"Project {project_name} generated with sucess!")
 
 def main():
-    project_name = input("Insert the name of project: ")
-    requirements_file = input("If have a requirements.txt, insert the path of file  (leave blank if there is none): ")
-    github_user = input("Insert the Github user: ")
-    author_name = input("Insert name of author: ")
-    author_email = input("Insert email of author: ")
+    project_name = input("\033[92mInsert the name of project:\033[00m ")
+    requirements_file = input("\033[92mIf have a requirements.txt, insert the path of file  (leave blank if there is none):\033[00m ")
+    github_user = input("\033[92mInsert the Github user:\033[00m ")
+    author_name = input("\033[92mInsert name of author:\033[00m ")
+    author_email = input("\033[92mInsert email of author:\033[00m ")
 
     requirements_file = requirements_file if requirements_file else None
     github_user = github_user if github_user else "your_user"
