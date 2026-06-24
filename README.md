@@ -1,8 +1,6 @@
 # startsetup
 
-##
-
-Script to start setup.py and folders
+Script to scaffold a `setup.py` and the basic folders for a new Python package.
 
 ### Install
 
@@ -25,6 +23,6 @@ pip install git+https://github.com/phor3nsic/startsetup
 |__ setup.py
 |__ .gitignore
 |__ project_name/
-    |__ __inity__.py
+    |__ __init__.py
     |__ main.py
 ```
